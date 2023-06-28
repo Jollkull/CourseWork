@@ -1,0 +1,351 @@
+@import url('https://fonts.cdnfonts.com/css/open-sans');
+@import url('https://fonts.cdnfonts.com/css/nunito-sans');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #817A7A;
+    /* background-color: transparent; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.nav {
+    padding: 20px;
+    height: 106px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav__list-item {
+    list-style: none;
+}
+
+.nav__list-item a {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700px;
+    text-decoration: none;
+    color: #FFFFFF;
+    /* color: #000000; */
+}
+
+.nav__mobile {
+    display: none;
+}
+
+#hero {
+    background-image: url(../img/hero.png);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#hero::after {
+    content: '';
+    background-color: #000000;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.hero__button {
+    text-decoration: none;
+    position: absolute;
+    padding: 15px 75px;
+    border: none;
+    border-radius: 30px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    background-color: #B9806A;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700px;
+    color: #FFFFFF;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.home,
+.history,
+.gallery,
+.footer,
+.tour {
+    background-color: #C2B8B8;
+    padding: 75px;
+}
+
+.home__title,
+.history__title,
+.gallery__title,
+.tour__title {
+    text-align: center;
+    margin-bottom: 75px;
+    font-size: 2.5rem;
+}
+
+.home__title {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #306530;
+}
+
+.home__content,
+.history__content,
+.gallery__content,
+.tour__content {
+    display: flex;
+}
+
+.home__content:nth-child(odd),
+.history__content:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.home__text,
+.history__text,
+.tour__card {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.home__text,
+.history__text {
+    text-align: justify;
+    padding: 30px 0 30px 30px;
+}
+
+.home__content:nth-child(odd) .home__text,
+.history__content:nth-child(even) .history__text {
+    padding: 30px 30px 30px 0;
+}
+
+.home__content img,
+.history__content img {
+    object-fit: contain;
+}
+
+.history,
+.gallery,
+.tour {
+    margin-top: 106px;
+}
+
+.gallery__title,
+.tour__title {
+    text-decoration: underline;
+}
+
+.gallery__img_list,
+.tour__card_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery__img_list img {
+    width: 500px;
+    aspect-ratio: 5 / 3;
+}
+
+.tour__card {
+    width: 500px;
+    text-align: center;
+    border: 1px solid #9E9999;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tour__card_title {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tour__card img {
+    margin: 20px 0;
+}
+
+hr {
+    border: 1px solid #9E9999;
+}
+
+.footer .container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+
+}
+
+.footer__content {
+    text-align: center;
+    font-weight: 700;
+    width: 33%;
+}
+
+.footer__content_left {
+    text-align: left;
+}
+
+.footer__content h3 {
+    margin-bottom: 30px;
+}
+
+.footer__social_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.footer__social a {
+    color:#000000;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1610px) {
+    .container {
+        width: 90%;
+    }
+
+    .tour__card {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .home__content,
+    .history__content,
+    .home__content:nth-child(odd),
+    .history__content:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .home__text,
+    .history__text,
+    .home__content:nth-child(odd) .home__text,
+    .history__content:nth-child(even) .history__text {
+        text-align: justify;
+        padding: 30px 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .footer .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__content {
+        text-align: center;
+        margin: 20px 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 100%;
+    }
+
+    .nav__mobile {
+        display: initial;
+        padding: 10px;
+        font-size: 2rem;
+        z-index: 3;
+    }
+
+    .nav__list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        background: #B9806A;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+        flex-direction: column;
+    }
+
+    .nav__list.active {
+        transform: translateX(0);
+    }
+
+    .nav__list-item a {
+        font-size: 1.5rem;
+    }
+
+    .hero__button {
+        font-size: 1rem;
+    }
+
+    .home,
+    .history,
+    .gallery,
+    .footer,
+    .tour {
+        padding: 75px 20px;
+    }
+
+    .gallery__img_list img {
+        width: 100%;
+    }
+
+    .home__title,
+    .history__title,
+    .gallery__title,
+    .tour__title {
+        font-size: 1.5rem;
+    }
+
+    .home__text,
+    .history__text,
+    .tour__card,
+    .footer__content {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .tour__card {
+        width: 100%;
+    }
+
+    .tour__card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
